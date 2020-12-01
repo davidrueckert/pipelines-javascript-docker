@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: davidrueckertpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: davidrueckertpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: davidrueckertpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: davidrueckertpipelinesjavascriptdocker 
+          image: davidrcontainerregistry.azurecr.io/davidrueckertpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
